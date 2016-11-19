@@ -3,14 +3,27 @@ from django.contrib.auth.models import User
 
 
 class Initiative(models.Model):
-    description = models.TextField(blank=True)
+    description = models.TextField(default="")
     name = models.CharField(max_length=300, default="")
     creator = models.ForeignKey(User)
-    term = models.DurationField(blank=True, null=True)
+    term = models.IntegerField(blank=True, null=True)
     customer = models.CharField(max_length=300, default="")
     city = models.CharField(max_length=300, default="")
 
-    pic = models.ImageField()
+    pic = models.ImageField(blank=True, null=True)
+    departments = models.ManyToManyField('Departament', blank=True)
+    progress = models.IntegerField(default=0)
+
+    purposes_strateg = models.TextField(default="")
+    purposes_oper = models.TextField(default="")
+
+    def __str__(self):
+        return self.name
+
+
+class DepartamentGroup(models.Model):
+    name = models.CharField(max_length=300, blank=True)
+    pic = models.ImageField(blank=True, null=True)
 
     def __str__(self):
         return self.name
@@ -19,6 +32,7 @@ class Initiative(models.Model):
 class Departament(models.Model):
     name = models.CharField(max_length=300, blank=True)
     agents = models.ManyToManyField(User)
+    group = models.ForeignKey(DepartamentGroup)
 
     def __str__(self):
         return self.name
