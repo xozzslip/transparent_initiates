@@ -6,28 +6,28 @@ from initiates.models import *
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = User
-        fields = ('url', 'username', 'email', 'groups')
+        fields = ('url', 'username', 'email', 'groups', 'id')
 
 
 class InitiativeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Initiative
-        fields = '__all__'
+        fields = ('id', 'url', 'description', 'name', 'creator', 'term', 'customer', 'city', 'pic')
 
 
 class DepartamentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Departament
-        fields = ('name', 'agents')
+        fields = ('name', 'agents', 'id')
 
 
 class VerdictSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Verdict
-        fields = ('text', 'mark', 'initiative', 'department')
+        fields = ('text', 'mark', 'initiative', 'department', 'id')
 
 
 class CommentSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Comment
-        fields = ('text', 'creator', 'initiative')
+        fields = ('text', 'creator', 'initiative', 'id')
