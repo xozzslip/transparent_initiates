@@ -7,7 +7,7 @@ class Initiative(models.Model):
     name = models.CharField(max_length=300, default="")
     creator = models.ForeignKey(User)
     term = models.IntegerField(blank=True, null=True)
-    customer = models.CharField(max_length=300, default="")
+    theme = models.CharField(max_length=300, default="")
     city = models.CharField(max_length=300, default="")
 
     pic = models.ImageField(blank=True, null=True)
@@ -16,6 +16,10 @@ class Initiative(models.Model):
 
     purposes_strateg = models.TextField(default="")
     purposes_oper = models.TextField(default="")
+    meaningfull = models.TextField(default="")
+    results = models.TextField(default="")
+    structure = models.TextField(default="")
+    states = models.TextField(default="")
 
     def __str__(self):
         return self.name
@@ -55,3 +59,10 @@ class Comment(models.Model):
 
     def __str__(self):
         return self.text
+
+
+class Document(models.Model):
+    target_department = models.ForeignKey(Departament)
+    initiative = models.ForeignKey(Initiative)
+    name = models.CharField(default="", max_length=500)
+    text = models.TextField(default="")

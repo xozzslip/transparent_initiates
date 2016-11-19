@@ -11,7 +11,9 @@ router.register(r'departaments', views.DepartamentViewSet)
 router.register(r'verdicts', views.VerdictViewSet)
 router.register(r'comments', views.CommentViewSet)
 
-urlpatterns = [
+
+urlpatterns = static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) + [
     url(r'^api/', include(router.urls)),
-    url(r'^', views.IndexView.as_view())
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    url(r'^login/', views.LoginView.as_view()),
+    url(r'^', views.IndexView.as_view()),
+]
