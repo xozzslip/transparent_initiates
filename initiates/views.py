@@ -8,6 +8,7 @@ from django.shortcuts import get_object_or_404
 from django.contrib.auth.models import User, Group
 from initiates.serializers import *
 from rest_framework import generics
+from django.views.generic import TemplateView
 
 from initiates.models import *
 
@@ -35,3 +36,7 @@ class CommentViewSet(viewsets.ModelViewSet):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all().order_by('-date_joined')
     serializer_class = UserSerializer
+
+
+class IndexView(TemplateView):
+    template_name = 'static/index.html'
