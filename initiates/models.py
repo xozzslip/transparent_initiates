@@ -4,8 +4,11 @@ from django.contrib.auth.models import User
 
 class Initiative(models.Model):
     description = models.TextField(blank=True)
-    name = models.CharField(max_length=300, blank=True)
+    name = models.CharField(max_length=300, default="")
     creator = models.ForeignKey(User)
+    term = models.DateTimeField(blank=True, null=True)
+    customer = models.CharField(max_length=300, default="")
+    city = models.CharField(max_length=300, default="")
 
     def __str__(self):
         return self.name

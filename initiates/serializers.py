@@ -9,10 +9,10 @@ class UserSerializer(serializers.HyperlinkedModelSerializer):
         fields = ('url', 'username', 'email', 'groups')
 
 
-class InitiateSerializer(serializers.HyperlinkedModelSerializer):
+class InitiativeSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Initiative
-        fields = ('description', 'name', 'creator')
+        fields = '__all__'
 
 
 class DepartamentSerializer(serializers.HyperlinkedModelSerializer):
