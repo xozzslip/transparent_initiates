@@ -12,5 +12,6 @@ router.register(r'verdicts', views.VerdictViewSet)
 router.register(r'comments', views.CommentViewSet)
 
 urlpatterns = [
-    url(r'^', include(router.urls)),
+    url(r'^api/', include(router.urls)),
+    url(r'^', views.IndexView.as_view())
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
