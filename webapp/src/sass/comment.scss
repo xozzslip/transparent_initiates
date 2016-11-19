@@ -1,0 +1,45 @@
+.comment-wrap {
+  margin-bottom: 20px;
+  background: white;
+  box-shadow: 0 1px 12px -3px rgba(0, 0, 0, 0.4);
+  border-radius: 2px;
+}
+
+.comment-title {
+  font-family: Calibri;
+  font-size: 27px;
+  font-weight: bold;
+  margin-left: 60px;
+  height: 25px;
+}
+
+.comment-body {
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-bottom: 10px;
+
+  p {
+    padding-bottom: 10px;
+  }
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  background: white;
+  box-shadow: 0 1px 12px -3px rgba(0, 0, 0, 0.4);
+  margin-bottom: 30px !important;
+  border-radius: 2px;
+
+  textarea {
+    margin: 12px;
+    padding: 5px;
+  }
+
+  button {
+    width: 30%;
+    align-self: flex-end;
+    margin-right: 12px;
+    margin-bottom: 10px;
+  }
+}

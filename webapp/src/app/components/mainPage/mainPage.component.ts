@@ -2,16 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import {Http} from "@angular/http";
 import {Router} from "@angular/router";
 import {DefaultService} from "../../services/default.service";
-import {IInitiative, InitiativeModel} from "../../models/initiative.model";
+import {IInitiative} from "../../models/initiative.model";
 
 @Component({
     selector: 'main-page',
     template: `
-		<header class="main-header-banner flex">
-			<div class="menu-item">Список проектов</div>
-			<div class="menu-item">Добавить проект <b>+</b></div>
-			<!--<div class="menu-item">Пункт меню 3</div>-->
-		</header>
+		<custom-header></custom-header>
 		<div class="content">
 		    <div class="flex-cards">
                 <card *ngFor="let initiative of initiatives; let i = index" [img_src]="initiative.pic"
