@@ -1,0 +1,56 @@
+@import "mixins";
+
+.banner {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+
+  .big-picture {
+    box-shadow: 0 1px 12px -3px rgba(0, 0, 0, 0.4);
+    width: 100%;
+    height: 300px;
+    @include filter(grayscale, 100%);
+    @include filter(brightness, 30%);
+  }
+
+  h1 {
+    position: absolute;
+    color: white;
+    z-index: 10;
+    font-size: 55px;
+    font-family: Calibri;
+    margin:0
+  }
+}
+
+
+.content-details {
+  @extend .content;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  box-shadow: 0 1px 12px -3px rgba(0, 0, 0, 0.4);
+  margin-bottom: 10px !important;
+
+  .initiative-info {
+    margin-top: 20px;
+
+    .short-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      font-family: Calibri Light;
+
+      p {
+        margin-left: 40px;
+        font-size: 20px;
+      }
+    }
+
+    .expandable-info {
+      @extend  .short-info;
+    }
+  }
+}
+

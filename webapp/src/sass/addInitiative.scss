@@ -1,0 +1,26 @@
+.row {
+  margin-bottom: 15px;
+}
+
+.content-form {
+  @extend .content;
+  width: 60%;
+  margin-bottom: 70px !important;
+
+  label {
+    font-size: 18px;
+  }
+}
+
+.documents-small {
+  font-size: 21px;
+}
+
+.file-input {
+  display: none !important;
+}
+
+.file-name {
+  font-size: 20px;
+  margin-left: 20px;
+}

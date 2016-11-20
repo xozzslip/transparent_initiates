@@ -1,0 +1,58 @@
+@import "mixins";
+
+start-screen {
+  img {
+    width: 100%;
+    height: 100%;
+    @include filter(grayscale, 100%);
+    @include filter(brightness, 30%);
+  }
+  .team-img {
+    background: rgb(0, 0, 0);
+    background: -webkit-linear-gradient(180deg, rgb(0, 0, 0) 41%, rgb(215, 225, 182) 100%);
+    background: -o-linear-gradient(180deg, rgb(0, 0, 0) 41%, rgb(215, 225, 182) 100%);
+    background: -ms-linear-gradient(180deg, rgb(0, 0, 0) 41%, rgb(215, 225, 182) 100%);
+    background: linear-gradient(180deg, rgb(0, 0, 0) 41%, rgb(215, 225, 182) 100%);
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    .greetings-message {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      color: white;
+      padding-top: 6%;
+
+      h1 {
+        font-size: 55px;
+        text-align: center;
+      }
+
+      h2 {
+        @extend h1;
+        font-size: 45px;
+      }
+
+      form {
+        width: 30%;
+        padding-top: 4%;
+
+        .btn-container {
+          display: flex;
+          justify-content: flex-end;
+
+          .login-button {
+            width: 25%;
+          }
+
+          .demo-button {
+            margin-left: 15px;
+          }
+        }
+      }
+    }
+  }
+}
